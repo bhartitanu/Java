@@ -59,7 +59,6 @@ public class Functions {
         return a + b;
     }
 
-    // optimsed ispimefunction
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // printhello();
@@ -87,10 +86,10 @@ public class Functions {
         // System.out.println(Fact(7));
         // System.out.println(bcoe(5, 3));
 
-        // // Function overloading
-        // System.out.println(Sum(3, 5));
-        // System.out.println(Sum(4.2f, 0.7f));
-        // System.out.println(Sum(4, 0, 8));
+        // Function overloading
+        System.out.println(Sum(3, 5));
+        System.out.println(Sum(4.2f, 0.7f));
+        System.out.println(Sum(4, 0, 8));
 
     }
 }
