@@ -7,6 +7,7 @@ public class Arr {
         for (int i = 0; i < n; i++) {
             a[i] = sc.nextInt();
         }
+        sc.close();
     }
 
     // Linear Search
@@ -42,6 +43,38 @@ public class Arr {
         return smallest;
     }
 
+    // Binary search
+    public static int binary_search(int a[], int key, int n) {
+        Arrays.sort(a, 0, n);
+        int start = 0, end = n - 1;
+        while (start <= end) {
+            // int mid = start + (end - start) / 2;
+            int mid = start + (end - start) / 2;
+            if (a[mid] == key) {
+                return mid;
+            }
+            if (a[mid] < key) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return -1;
+    }
+
+    // Reverse the Array
+    public static void reverseArray(int a[]) {
+        int first = 0;
+        int last = a.length - 1;
+        while (first < last) {
+            int temp = a[first];
+            a[first] = a[last];
+            a[last] = temp;
+            first++;
+            last--;
+        }
+    }
+
     public static void printArray(int a[], int size) {
         System.out.print("The elements of arrays :");
         for (int i = 0; i < size; i++) {
@@ -51,12 +84,13 @@ public class Arr {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int arr[] = new int[20];
-        System.out.print("Enter the size of array:- ");
-        int n = sc.nextInt();
-        createArray(arr, n);
-        printArray(arr, n);
+        // Scanner sc = new Scanner(System.in);
+        // int arr[] = new int[20];
+        // System.out.print("Enter the size of array:- ");
+        // int n = sc.nextInt();
+        // createArray(arr, n);
+
+        // printArray(arr, n);
 
         // linear search
         // System.out.print("Enter the element you want to find ");
@@ -67,5 +101,15 @@ public class Arr {
         // System.out.println("The Smallest in the given array is " + getSmallest(arr,
         // n));
 
+        // Binary Search
+        // Arrays.sort(arr);
+        // System.out.print("Enter the element you want to find ");
+        // int key = sc.nextInt();
+        // System.out.println("The index for key is " + binary_search(arr, n, key));
+
+        int arr[] = { 2, 3, 4, 5, 1, 7 };
+        // reverse the array
+        reverseArray(arr);
+        printArray(arr, arr.length);
     }
 }
