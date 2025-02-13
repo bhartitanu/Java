@@ -84,11 +84,11 @@ public class Arr {
     }
 
     public static void main(String[] args) {
-        // Scanner sc = new Scanner(System.in);
-        // int arr[] = new int[20];
-        // System.out.print("Enter the size of array:- ");
-        // int n = sc.nextInt();
-        // createArray(arr, n);
+        Scanner sc = new Scanner(System.in);
+        int arr[] = new int[20];
+        System.out.print("Enter the size of array:- ");
+        int n = sc.nextInt();
+        createArray(arr, n);
 
         // printArray(arr, n);
 
@@ -102,14 +102,10 @@ public class Arr {
         // n));
 
         // Binary Search
-        // Arrays.sort(arr);
-        // System.out.print("Enter the element you want to find ");
-        // int key = sc.nextInt();
-        // System.out.println("The index for key is " + binary_search(arr, n, key));
-
-        int arr[] = { 2, 3, 4, 5, 1, 7 };
-        // reverse the array
-        reverseArray(arr);
-        printArray(arr, arr.length);
+        Arrays.sort(arr);
+        System.out.print("Enter the element you want to find ");
+        int key = sc.nextInt();
+        System.out.println("The index for key is " + binary_search(arr, n, key));
+        sc.close();
     }
 }
