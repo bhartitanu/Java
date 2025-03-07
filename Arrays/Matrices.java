@@ -67,6 +67,42 @@ public class Matrices {
         return sum;
     }
 
+    public static boolean StaircaseSearch(int matrix[][], int key) {
+
+        // ROW-WISE
+        // int row = 0;
+        // int col = matrix[0].length - 1;
+        // while (row <= matrix.length && col >= 0) {
+        // if (matrix[row][col] == key) {
+        // System.out.println("Element found at index (" + (row + 1) + "," + (col + 1) +
+        // ")");
+        // return true;
+        // } else if (matrix[row][col] > key) {
+        // col--;
+        // } else {
+        // row++;
+        // }
+        // }
+        // System.out.println("key not found ");
+        // return false;
+
+        // COLUMN-WISE
+        int row = matrix.length - 1;
+        int col = 0;
+        while (row >= 0 && col <= matrix[0].length) {
+            if (matrix[row][col] == key) {
+                System.out.println("Element found (" + (row + 1) + "," + (col + 1) + ")");
+                return true;
+            } else if (matrix[row][col] > key) {
+                row--;
+            } else {
+                col++;
+            }
+        }
+        System.out.println("Element not found");
+        return false;
+    }
+
     public static void main(String args[]) {
         // int matrix[][] = new int[3][3];
         // int n = matrix.length, m = matrix[0].length;
@@ -97,6 +133,7 @@ public class Matrices {
                 { 16, 17, 18, 19 }
         };
 
-        System.out.println(diagonal_sum(Matrix));
+        // System.out.println(diagonal_sum(Matrix));
+        System.out.println(StaircaseSearch(Matrix, 19));
     }
 }
