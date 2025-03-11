@@ -35,6 +35,26 @@ public class Strings {
         return (float) Math.sqrt(x2 + y2);
     }
 
+    public static void substring(String str, int si, int ei) {
+        String substr = "";
+        for (int i = si; i < ei; i++) {
+            substr += str.charAt(i);
+        }
+        System.out.println(substr);
+    }
+
+    public static void largestString(String strs[]) {
+        String largest = strs[0];
+        for (int i = 1; i < strs.length; i++) {
+            if (largest.compareTo(strs[i]) < 0) {
+                largest = strs[i];
+            } else {
+                continue;
+            }
+        }
+        System.out.println(largest);
+    }
+
     public static void main(String[] args) {
         // String str = "tanu";
         // System.out.println(str);
@@ -48,8 +68,16 @@ public class Strings {
         // String s = "raceacar";
         // System.out.println(check_palindrome(s));
 
-        String path = "EWNSSNNNN";
-        System.out.println(get_shortest_path(path));
+        // String path = "EWNSSNNNN";
+        // System.out.println(get_shortest_path(path));
+
+        // String s = "HelloWorld";
+        // substring(s, 5, 10);
+        // System.out.println(s.substring(5, 10));
+
+        // Find largest among strings
+        String s[] = { "Surilachandra", "Raj", "sundri" };
+        largestString(s);
 
     }
 }
