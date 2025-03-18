@@ -79,5 +79,12 @@ public class Strings {
         // String s[] = { "Surilachandra", "Raj", "sundri" };
         // largestString(s);
 
+        StringBuilder s = new StringBuilder("");
+        for (char ch = 'a'; ch <= 'z'; ch++) {
+            s.append(ch);
+        }
+        System.out.println(s);
+        System.out.println(s.length());
+
     }
 }
