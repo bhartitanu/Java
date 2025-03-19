@@ -55,6 +55,39 @@ public class Strings {
         System.out.println(largest);
     }
 
+    public static String toUppercase(String str) {
+        StringBuilder s = new StringBuilder("");
+        char ch = Character.toUpperCase(str.charAt(0));
+        s.append(ch);
+
+        for (int i = 1; i < str.length(); i++) {
+            if (str.charAt(i) == ' ' && i < str.length() - 1) {
+                s.append(str.charAt(i));
+                i++;
+                s.append(Character.toUpperCase(str.charAt(i)));
+            } else {
+                s.append(str.charAt(i));
+            }
+        }
+        return s.toString();
+    }
+
+    public static String compress(String s) {
+        String newstr = "";
+        for (int i = 0; i < s.length(); i++) {
+            Integer count = 1;
+            while (i < s.length() - 1 && s.charAt(i) == s.charAt(i + 1)) {
+                count++;
+                i++;
+            }
+            newstr += s.charAt(i);
+            if (count > 1) {
+                newstr += count.toString();
+            }
+        }
+        return newstr;
+    }
+
     public static void main(String[] args) {
         // String str = "tanu";
         // System.out.println(str);
@@ -79,12 +112,17 @@ public class Strings {
         // String s[] = { "Surilachandra", "Raj", "sundri" };
         // largestString(s);
 
-        StringBuilder s = new StringBuilder("");
-        for (char ch = 'a'; ch <= 'z'; ch++) {
-            s.append(ch);
-        }
-        System.out.println(s);
-        System.out.println(s.length());
+        // StringBuilder s = new StringBuilder("");
+        // for (char ch = 'a'; ch <= 'z'; ch++) {
+        // s.append(ch);
+        // }
+        // System.out.println(s);
+        // System.out.println(s.length());
 
+        // String s = "hi I am a student ";
+        // System.out.println(toUppercase(s));
+
+        String str = "aaattcccccaa";
+        System.out.println(compress(str));
     }
 }
